@@ -1,0 +1,13 @@
+button,
+.button,
+.button-lg {
+    background: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5em 1.1em;
+    text-decoration: none
+}
+
+.button-lg {
+    @include font-subheading;
+}

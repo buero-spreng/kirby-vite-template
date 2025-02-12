@@ -1,0 +1,18 @@
+.main-menu {
+
+    .menu-list-wrapper {
+
+        .menu-list {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            gap: var(--margin-xs);
+
+            .menu-item {
+                .active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

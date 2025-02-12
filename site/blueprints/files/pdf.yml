@@ -1,0 +1,10 @@
+title: PDF
+
+accept:
+  extension: pdf
+
+fields:
+  description:
+    label: Description
+    type: text
+    width: 1/1

@@ -1,0 +1,7 @@
+title: Error
+
+icon: alert
+
+fields:
+  text:
+    extends: fields/writer

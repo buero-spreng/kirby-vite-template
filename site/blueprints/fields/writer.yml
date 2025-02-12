@@ -1,0 +1,32 @@
+title: Writer
+
+type: writer
+inline: false
+headings:
+  - 2
+  - 4
+nodes:
+  - heading
+  - paragraph
+  - bulletList
+  # - orderedList
+  # - quote
+marks:
+  - bold
+  - italic
+  # - underline
+  # - strike
+  # - code
+  - link
+  - email
+  # - sub
+  # - sup
+  # - clear
+toolbar:
+  inline: false
+  marks:
+    - bold
+    - italic
+    - "|"
+    - link
+    - email

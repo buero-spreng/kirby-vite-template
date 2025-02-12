@@ -1,0 +1,35 @@
+columns:
+  left:
+    width: 1/2
+    fields:
+      street:
+        label: 
+          en: Street
+          de: Strasse
+        type: text
+      zip:
+        label: 
+          en: ZIP Code
+          de: PLZ
+        type: text
+        width: 1/4
+      city:
+        label: 
+          en: City
+          de: Stadt
+        type: text
+        width: 3/4
+      country:
+        label: 
+          en: Country
+          de: Land
+        type: text
+
+  right:
+    width: 1/2
+    fields:
+      website:
+        label: 
+          en: Website
+          de: Webseite
+        type: url

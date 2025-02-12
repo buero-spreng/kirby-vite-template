@@ -1,0 +1,6 @@
+Title: Error
+
+----
+
+Text: <h2>Whoops!</h2> <br>
+Something went wrong

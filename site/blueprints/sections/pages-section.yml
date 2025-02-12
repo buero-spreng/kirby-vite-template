@@ -1,0 +1,13 @@
+title: Listed Pages
+
+label:
+  en: Pages
+  de: Seiten
+  
+type: pages
+status: listed
+image:
+query: false
+  back: white
+  icon: page
+  color: black

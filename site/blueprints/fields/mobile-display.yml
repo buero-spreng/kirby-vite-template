@@ -1,0 +1,16 @@
+title: Mobile Display
+
+label: 
+  en: Show on mobile devices
+  de: Auf Smartphones anzeigen
+width: 1/3
+
+type: toggle
+default: true
+text:
+  - 
+    en: Nope
+    de: Lieber nicht
+  - 
+    en: Yay
+    de: Gerne

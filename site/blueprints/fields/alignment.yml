@@ -1,0 +1,26 @@
+title: Alignment
+
+label: 
+  en: Alignment
+  de: Alinierung
+  
+type: toggles
+width: 1/2
+labels: false
+grow: false
+options:
+  - value: top-left
+    text: Links oben
+    icon: grid-top-left
+  - value: top-right
+    text: Rechts oben
+    icon: grid-top-right
+  - value: bottom-left
+    text: Links unten
+    icon: grid-bottom-left
+  - value: bottom-right
+    text: Rechts unten
+    icon: grid-bottom-right
+  - value: center
+    text: Zentrum
+    icon: grid-full

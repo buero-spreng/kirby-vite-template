@@ -1,0 +1,35 @@
+.DS_Store
+/.env
+node_modules/
+.vscode
+/site/config/vite.config.php
+
+# Frontend
+/public/assets/*
+!/public/assets/media/
+/public/dist/
+
+# Kirby
+.dev
+kirby
+vendor
+
+site/plugins/*
+!site/plugin/helpers
+
+/public/media/*
+!/public/media/index.html
+
+/storage/accounts/*
+!/storage/accounts/.gitkeep
+
+/storage/cache/*
+!/storage/cache/.gitkeep
+
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+/storage/sessions/*
+!/storage/sessions/.gitkeep
+
+/site/config/.license
