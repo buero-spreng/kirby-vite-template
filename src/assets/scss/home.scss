@@ -1,4 +1,4 @@
-@import 'utilities/breakpoints';
+@use 'abstracts' as *;
 
 body {
     background-color: bisque;

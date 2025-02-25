@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 button,
 .button,
 .button-lg {
@@ -9,5 +11,5 @@ button,
 }
 
 .button-lg {
-    @include font-subheading;
+    @include font-style(heading2);
 }

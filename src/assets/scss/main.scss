@@ -1,26 +1,13 @@
-/* Libraries */
-
-// Glide => to make glide working "glide.core.scss" or "glide.core.min.css" as well as the "glide.min.js" must be included!
-// @import '/node_modules/@glidejs/glide/src/assets/sass/glide.core';
-// @import '../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
-
-
 /* Site */
 
-@import 'base/reset';
+@forward 'base';
 
-@import 'utilities/breakpoints';
-@import 'utilities/variables';
-@import 'base/typography';
+@forward 'utilities';
 
-@import 'utilities/grid';
-@import 'utilities/utility-classes';
+// create new files for each component or comment unused components
+@forward 'components/arrows';
+@forward 'components/buttons';
+@forward 'components/gallery';
+@forward 'components/images';
 
-@import 'components/arrows';
-@import 'components/buttons';
-@import 'components/gallery';
-@import 'components/images';
-
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/general';
+@forward 'layout';

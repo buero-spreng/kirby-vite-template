@@ -5,7 +5,9 @@ snippet('page-structure', slots: true)
 
 <?php slot('default') ?>
 
-<h1><?= $page->title() ?></h1>
+<div class="container">
+    <h1><?= $page->title() ?></h1>
+</div>
 
 <?php endslot() ?>
 

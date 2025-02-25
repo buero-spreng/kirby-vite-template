@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+body {
+  @include font-style(text);
+  font-family: var(--font-family-base);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+// Heading Styles
+h1,
+h2,
+.h1,
+.h2,
+.heading-1,
+.heading-2 {
+  @include font-style(heading1);
+}
+
+h3,
+h4,
+.h3,
+.heading-3 {
+  @include font-style(heading2);
+}
+
+h5,
+h6,
+.h4,
+.heading-4 {
+  @include font-style(heading3);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+.font-normal,
+.font-regular {
+  font-weight: var(--font-weight-normal);
+}

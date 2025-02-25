@@ -1,0 +1,42 @@
+$typography: (
+  heading1: (
+    font-size: var(--font-size-xl),
+    line-height: var(--line-height-xl),
+    font-weight: var(--font-weight-bold)
+  ),
+  heading2: (
+    font-size: var(--font-size-lg),
+    line-height: var(--line-height-lg),
+    font-weight: var(--font-weight-bold)
+  ),
+  heading3: (
+    font-size: var(--font-size-md),
+    line-height: var(--line-height-md),
+    font-weight: var(--font-weight-bold)
+  ),
+  heading4: (
+    font-size: var(--font-size-sm),
+    line-height: var(--line-height-sm),
+    font-weight: var(--font-weight-bold)
+  ),
+  text: (
+    font-size: var(--font-size-md),
+    line-height: var(--line-height-md),
+    font-weight: var(--font-weight-regular)
+  ),
+  infotext: (
+    font-size: var(--font-size-sm),
+    line-height: var(--line-height-sm),
+    font-weight: var(--font-weight-regular)
+  )
+);
+
+// Dynamic Typography Mixin
+@mixin font-style($type) {
+  @if map-has-key($typography, $type) {
+    $styles: map-get($typography, $type);
+    font-size: map-get($styles, font-size);
+    line-height: map-get($styles, line-height);
+    font-weight: map-get($styles, font-weight);
+  }
+}

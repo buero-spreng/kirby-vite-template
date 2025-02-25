@@ -1,20 +1,3 @@
-/* Typography */
-.heading { @include font-heading; }
-.subheading { @include font-subheading; }
-.small-heading { @include font-small-heading; }
-.text { @include font-text; }
-.infotext { @include font-infotext; }
-
-.font-bold {
-    font-weight: var(--font-weight-bold);
-}
-
-.font-normal,
-.font-regular {
-    font-weight: var(--font-weight-normal);
-}
-
-
 /* Colors */
 .bg-color-black { background-color: var(--color-black); }
 .bg-color-white { background-color: var(--color-white); }
@@ -168,11 +151,6 @@
 .no-gap { gap: 0; }
 .no-rowgap { row-gap: 0; }
 .no-columngap { column-gap: 0; }
-
-
-/* Anchors and Links */
-.link { color: var(--link-color); text-decoration: underline; }
-.link-unstyle { color: var(--text-color); text-decoration: none; }
 
 
 /* Borders */
