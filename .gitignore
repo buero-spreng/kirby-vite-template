@@ -6,7 +6,7 @@ node_modules/
 # Generated file from kirby-vite plugin
 /site/config/vite.config.php
 
-# Packet Managers
+# Package Managers
 package-lock.json
 composer.lock
 
