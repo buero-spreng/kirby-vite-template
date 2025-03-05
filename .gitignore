@@ -2,7 +2,13 @@
 /.env
 node_modules/
 .vscode
+
+# Generated file from kirby-vite plugin
 /site/config/vite.config.php
+
+# Packet Managers
+package-lock.json
+composer.lock
 
 # Frontend
 /public/assets/*
