@@ -2,24 +2,27 @@
 
 ## Features
 
+These features are shamelessly stolen by [Arnoson's kirby-vite kit](https://github.com/arnoson/kirby-vite-multi-page-kit) 
+
 - ⚡️ Uses [Vite](https://vitejs.dev/) with [kirby-vite](https://github.com/arnoson/kirby-vite) plugin
 - 📚 Multiple pages
 - 🔄 Live Reloading for Kirby templates, snippets, content, ... changes
 - 📂 [Public folder structure](https://getkirby.com/docs/guide/configuration#custom-folder-setup__public-folder-setup)
 
-- Predefined components (kesabr)
-- Predefined SCSS structure:
-  - basic reset
-  - typographic styling structure
+- 🧩 Predefined components
+- 🎨 Predefined SCSS structure:
+  - abstracts
+  - typographic styling
   - variable setup
   - utility classes
+  - custom built grid
   - scaleable structure
-- Predefined `site/snippets` structure:
+- ✂️ Predefined `site/snippets` structure:
   - `site/snippets/page-structure.php`
   - components library
   - page parts
   - blocks library
-- Predefined `site/blueprints` structure:
+- 🗺️ Predefined `site/blueprints` structure:
   - files
   - fields
   - sections
