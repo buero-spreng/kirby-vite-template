@@ -2,12 +2,15 @@
 
 ## Features
 
-These features are shamelessly stolen by [Arnoson's kirby-vite kit](https://github.com/arnoson/kirby-vite-multi-page-kit) 
+#### These features are shamelessly stolen by [Arnoson's kirby-vite kit](https://github.com/arnoson/kirby-vite-multi-page-kit) 
 
 - ⚡️ Uses [Vite](https://vitejs.dev/) with [kirby-vite](https://github.com/arnoson/kirby-vite) plugin
 - 📚 Multiple pages
 - 🔄 Live Reloading for Kirby templates, snippets, content, ... changes
 - 📂 [Public folder structure](https://getkirby.com/docs/guide/configuration#custom-folder-setup__public-folder-setup)
+
+
+#### These features are added by me to provide predefined elements
 
 - 🧩 Predefined components
 - 🎨 Predefined SCSS structure:
