@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $typography: (
   heading1: (
     font-size: var(--font-size-xl),
@@ -33,10 +35,10 @@ $typography: (
 
 // Dynamic Typography Mixin
 @mixin font-style($type) {
-  @if map-has-key($typography, $type) {
-    $styles: map-get($typography, $type);
-    font-size: map-get($styles, font-size);
-    line-height: map-get($styles, line-height);
-    font-weight: map-get($styles, font-weight);
+  @if map.has-key($typography, $type) {
+    $styles: map.get($typography, $type);
+    font-size: map.get($styles, font-size);
+    line-height: map.get($styles, line-height);
+    font-weight: map.get($styles, font-weight);
   }
 }
