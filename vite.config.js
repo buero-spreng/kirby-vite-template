@@ -21,6 +21,10 @@ export default ({ mode }) => ({
     alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
   },
 
+  css: {
+    devSourcemap: true
+  },
+
   build: {
     outDir: resolve(process.cwd(), "public/dist"),
     emptyOutDir: true,
