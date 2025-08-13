@@ -4,7 +4,7 @@ import kirby from "vite-plugin-kirby";
 
 const input = globSync([
   
-  "src/index.js", 
+  "src/main.js", 
   "src/scss/main.scss", 
   "src/templates/*.{js,scss}", 
   "src/scss/templates/*.scss"

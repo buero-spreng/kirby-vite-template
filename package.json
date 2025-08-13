@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "npm run build && npm run server"
   },
-  "author": "kesabr",
+  "author": "Kenan Brunner",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.0.0",

@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $site->title() ?></title>
 
-    <?= vite()->js('index.js', ['defer' => true]) ?>
-    <?= vite()->css('index.js') ?>
+    <?= vite()->js('main.js', ['defer' => true]) ?>
+    <?= vite()->css('main.js') ?>
 
     <?= vite()->js("templates/{{ page.template }}.js", ['defer' => true], try: true) ?>
     <?= vite()->css("templates/{{ page.template }}.js", try: true) ?>
