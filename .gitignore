@@ -21,7 +21,7 @@ kirby
 vendor
 
 site/plugins/*
-!site/plugin/helpers
+!site/plugins/kb-helpers/
 
 /public/media/*
 !/public/media/index.html

@@ -1,0 +1,16 @@
+{
+    "name": "kesabr/custom-functions",
+    "description": "A Kirby plugin to provide globally accessible custom functions.",
+    "version": "1.0.0",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kenan Brunner",
+            "email": "hello@kenanbrunner.com"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}
