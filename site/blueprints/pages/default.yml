@@ -1,5 +1,7 @@
 title: Default Page
 
+icon: page
+
 columns:
   main:
     width: 2/3
@@ -8,8 +10,8 @@ columns:
         type: fields
         fields:
           text:
-            type: textarea
-            size: huge
+            extends: fields/writer
+
   sidebar:
     width: 1/3
     sections:

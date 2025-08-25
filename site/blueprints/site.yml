@@ -1,4 +1,30 @@
-title: Site
+title: Site Title
 
-sections:
-  pages: sections/pages-section
+tabs:
+  main: 
+    label: Pages
+
+    columns: 
+      - width: 1/2
+        sections:
+          mainPages:
+            label: Pages
+            type: pages
+            image:
+              query: false
+              back: transparent
+              color: font
+        
+      - width: 1/2
+        sections:
+          backgroundPages:
+            label: Background Pages
+            type: pages
+            templates:
+              - legal
+              - error
+            image:
+              query: false
+              back: transparent
+              color: font
+
