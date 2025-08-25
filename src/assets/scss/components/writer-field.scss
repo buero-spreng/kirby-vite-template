@@ -2,12 +2,14 @@
 
 /** 
 
-This controlls everything inside the layout field 
-Hence the layout class should wrap all styled elements
+Styling for text content inside a writer field (https://getkirby.com/docs/reference/panel/fields/writer).
+
+The `writer-fields` class is used to avoid styling these elements in other context.
+Wrap any content in this class to apply the styles.
 
 */
 
-.layout {
+.writer-fields {
   /* sensible defaults */
   --space-xs: var(--margin-xs);
   --space-sm: var(--margin-sm);

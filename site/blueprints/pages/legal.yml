@@ -1,0 +1,12 @@
+title: Legal Page
+
+icon: lock
+
+status:
+  draft: Draft
+  unlisted: Unlisted
+
+fields:
+  text: 
+    extends: fields/writer
+    width: 1/2
