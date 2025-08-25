@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+/** 
+
+This controlls everything inside the layout field 
+Hence the layout class should wrap all styled elements
+
+*/
+
+.layout {
+  /* sensible defaults */
+  --space-xs: var(--margin-xs);
+  --space-sm: var(--margin-sm);
+  --space-md: var(--margin-md);
+  --space-lg: var(--margin-lg);
+  --space-xl: var(--margin-xl);
+
+  /* reset margins so we fully control rhythm */
+  > * { margin: 0; }
+
+  /* the stack: every next sibling gets a top margin */
+  > * + * { margin-block-start: var(--flow-space, var(--space-md)); }
+
+  /* type presets */
+  h2 { @include font-style(heading2); --flow-space: var(--space-xl); }
+  h3 { @include font-style(heading3); --flow-space: var(--space-lg); }
+  h4 { @include font-style(heading3); --flow-space: var(--space-md); }
+  h5 { @include font-style(heading4); --flow-space: var(--space-md); }
+  h6 { @include font-style(heading4); --flow-space: var(--space-md); }
+  p  {                                --flow-space: var(--space-sm); }
+  ul, ol {                            --flow-space: var(--space-md); }
+
+  /* tighten heading stacks (bigger → smaller) */
+  :is(h2) + :is(h3,h4,h5,h6) { margin-block-start: var(--space-lg); }
+  :is(h3) + :is(h4,h5,h6)    { margin-block-start: var(--space-md); }
+  :is(h4) + :is(h5,h6)       { margin-block-start: var(--space-sm); }
+  h5 + h6                     { margin-block-start: var(--space-sm); }
+
+  /* paragraph clusters */
+  p + p { margin-block-start: var(--space-sm); }
+
+  /* lists */
+  :where(ul,ol) {
+    padding-inline-start: 1.25rem;
+    list-style-position: outside;
+  }
+  :where(li) + li { margin-block-start: 0.25em; }
+
+  /* hyphenation & long-word safety (language matters!) */
+  :where(p, li, blockquote, figcaption) {
+    hyphens: auto;
+    overflow-wrap: break-word; /* standard */
+  }
+
+  /* misc niceties for rich content */
+  img, svg, video { display:block; max-inline-size:100%; block-size:auto; }
+  a { text-underline-offset: .08em; text-decoration-thickness: .08em; }
+
+
+  /* If users put more than one block into a layout column */
+  .block + .block {
+    margin-top: var(--margin-md);
+  }
+}

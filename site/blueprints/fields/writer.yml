@@ -4,6 +4,7 @@ type: writer
 inline: false
 headings:
   - 2
+  - 3
   - 4
 nodes:
   - heading
