@@ -22,7 +22,13 @@ export default ({ mode }) => ({
   },
 
   css: {
-    devSourcemap: true
+    devSourcemap: true,
+
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      }
+    }
   },
 
   build: {
