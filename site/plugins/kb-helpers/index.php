@@ -9,4 +9,3 @@ Kirby::plugin('kesabr/kb-helpers', [
 
 // Include additional PHP files
 require_once __DIR__ . '/lib/convertFractionToClass.php';
-require_once __DIR__ . '/lib/filterAndProcess.php';
