@@ -32,14 +32,14 @@
   - `./users/`
   - `./blocks/`
 - 🌐 Extends Kirby's layout field
-  - `~/components/layout.scss`
   - `~/components/layout.php`
   - `~/blueprints/fields/layout.yml`
-  - Makes use of the grid system `~/utility/grid.scss`
+  - uses writer field styles for text content `~/components/writer-field.scss`
+  - Uses the grid system `~/utility/grid.scss` to structure the layout entries
 - 🔌 Helper Functions Plugin
   - `~/site/plugins/kb-helpers`
   - Add functions to the plugin to the `lib` folder (They are publicly accessible)
-  - The grid system uses the `convertFractionToClass` function
+  - The layout component uses the `convertFractionToClass` function
 
 
 ## Installation
