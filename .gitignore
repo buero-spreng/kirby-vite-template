@@ -15,6 +15,9 @@ composer.lock
 !/public/assets/media/
 /public/dist/
 
+# Content should only be handled by the live Site's panel
+/content/
+
 # Kirby
 .dev
 kirby
