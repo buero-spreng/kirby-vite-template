@@ -1,20 +1,18 @@
 @use "../abstracts" as *;
 
-.main-menu {
+.menu__list {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  gap: var(--margin-sm);
+}
 
-    .menu-list-wrapper {
+.menu__item {
+  a {
+    text-decoration: none;
+  }
 
-        .menu-list {
-            height: fit-content;
-            width: fit-content;
-            display: flex;
-            gap: var(--margin-xs);
-
-            .menu-item {
-                .active {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
+  &.active {
+    text-decoration: underline;
+  }
 }
