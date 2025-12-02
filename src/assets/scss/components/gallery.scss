@@ -26,7 +26,7 @@ $gallery-gap: 0; // 0 (Classic) | anything > 0 (slider)
 $arrow-size: var(--font-size-md);
 
 $bullet-size: 10px;
-$bullet-gap: var(--margin-sm);
+$bullet-gap: var(--spacing-sm);
 $bullet-color: rgb(180, 180, 180);
 $bullet-active-color: rgb(52, 52, 52);
 
@@ -54,7 +54,7 @@ $bullet-active-color: rgb(52, 52, 52);
         }
 
         figcaption {
-            padding: var(--margin-sm) ;
+            padding: var(--spacing-sm) ;
         }
     }
 }
@@ -65,7 +65,7 @@ $bullet-active-color: rgb(52, 52, 52);
     bottom: 0;
     left: 0;
     font-size: $arrow-size;
-    padding: var(--margin-sm);
+    padding: var(--spacing-sm);
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -78,7 +78,7 @@ $bullet-active-color: rgb(52, 52, 52);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    padding: var(--margin-sm);
+    padding: var(--spacing-sm);
     width: fit-content;
     display: flex;
     gap: $bullet-gap;

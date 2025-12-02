@@ -1,8 +1,12 @@
 @use "../abstracts" as *;
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .container {
   width: var(--container-width);
-  padding-inline: var(--margin-container-inline);
-  padding-block: var(--margin-container-block);
-  margin: auto;
 }

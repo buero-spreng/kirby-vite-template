@@ -1,12 +1,5 @@
 :root {
 
-    /* Buttons & Icons */
-    --icon-size: clamp(1.875rem, 1.429rem + 1.429vw, 2.5rem);
-    --burger-button-width: calc(var(--icon-size) * 1.25);
-    --burger-button-height: calc(var(--burger-button-width) * 2 / 3);
-    --burger-button-stroke: 3px;
-
-
     /* Typography */
     --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -25,44 +18,59 @@
 
 
     /* Colors */
+    /* Base Colors */
     --color-black: rgb(29, 29, 27);
     --color-white: rgb(248, 248, 248);
-    --color-red: rgb(255, 51, 51);
-    --color-blue: rgb(53, 107, 255);
+    --color-red:   rgb(255, 51, 51);
 
-    --text-color: var(--color-black);
-    --bg-color: var(--color-white);
+    /* Semantic Colors */
+    --text-color:   var(--color-black);
+    --bg-color:     var(--color-white);
     --accent-color: var(--color-red);
 
-    --link-color: var(--accent-color);
-    --icon-color: var(--text-color);
+    /* Component Colors */
+    --link-color:   var(--accent-color);
+    --icon-color:   var(--text-color);
     --border-color: var(--text-color);
-    --button-color: var(--color-blue);
+    --button-color: var(--color-red);
 
 
     /* Borders */
     --border-width: 1px;
 
 
-    /* Margins */
+    /* Spacing */
     $spacing-unit: 4px; // Adjust the base spacing unit as needed
 
-    --margin-xxs: calc(1 * #{$spacing-unit});
-    --margin-xs: calc(2 * #{$spacing-unit});
-    --margin-sm: calc(4 * #{$spacing-unit});
-    --margin-md: calc(8 * #{$spacing-unit});
-    --margin-lg: calc(12 * #{$spacing-unit});
-    --margin-xl: calc(16 * #{$spacing-unit});
-    --margin-xxl: calc(20 * #{$spacing-unit});
+    --spacing-3xs: calc( 0.5 * #{$spacing-unit});
+    --spacing-2xs: calc( 1   * #{$spacing-unit});
+    --spacing-xs:  calc( 2   * #{$spacing-unit});
+    --spacing-sm:  calc( 4   * #{$spacing-unit});
+    --spacing-md:  calc( 8   * #{$spacing-unit});
+    --spacing-lg:  calc(12   * #{$spacing-unit});
+    --spacing-xl:  calc(16   * #{$spacing-unit});
+    --spacing-2xl: calc(24   * #{$spacing-unit});
+    --spacing-3xl: calc(32   * #{$spacing-unit});
 
-    --margin-container-inline: var(--margin-md);
-    --margin-container-block: var(--margin-md);
+    --spacing-inline: var(--spacing-md);
+    --spacing-block:  var(--spacing-sm);
 
-    --grid-gutter: clamp(var(--margin-xs), var(--margin-xs) + 0.2vw, var(--margin-sm));
-
+    --spacing-grid: clamp(
+        var(--spacing-xs),
+        var(--spacing-xs) + 0.2vw,
+        var(--spacing-sm)
+    );
+    
 
     /* Container */
-    --container-width: min(100%, 1200px);
+    --container-width: 100%;
+
+
+    /* Buttons & Icons */
+    --icon-size: clamp(1.875rem, 1.429rem + 1.429vw, 2.5rem);
+    --burger-button-width: calc(var(--icon-size) * 1.25);
+    --burger-button-height: calc(var(--burger-button-width) * 2 / 3);
+    --burger-button-stroke: 3px;
 
 
     /* Breakingpoints */
@@ -71,12 +79,4 @@
     // --breakpoint-md: #{$breakpoint-md};
     // --breakpoint-lg: #{$breakpoint-lg};
     // --breakpoint-xl: #{$breakpoint-xl};
-
-
-    /* Z-index */
-    --z-index-1: 1000;
-    --z-index-2: 100;
-    --z-index-3: 10;
-    --z-index-4: 1;
-
 }

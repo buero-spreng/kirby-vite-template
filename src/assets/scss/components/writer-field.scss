@@ -11,32 +11,32 @@ Wrap any content in this class to apply the styles.
 
 .writer-fields {
   /* sensible defaults */
-  --space-xs: var(--margin-xs);
-  --space-sm: var(--margin-sm);
-  --space-md: var(--margin-md);
-  --space-lg: var(--margin-lg);
-  --space-xl: var(--margin-xl);
+  --_space-xs: var(--spacing-xs);
+  --_space-sm: var(--spacing-sm);
+  --_space-md: var(--spacing-md);
+  --_space-lg: var(--spacing-lg);
+  --_space-xl: var(--spacing-xl);
 
   /* reset margins so we fully control rhythm */
   > * { margin: 0; }
 
   /* the stack: every next sibling gets a top margin */
-  > * + * { margin-block-start: var(--flow-space, var(--space-md)); }
+  > * + * { margin-block-start: var(--flow-space, var(--_space-md)); }
 
   /* type presets */
-  h2 { @include font-style(heading2); --flow-space: var(--space-xl); }
-  h3 { @include font-style(heading3); --flow-space: var(--space-lg); }
-  h4 { @include font-style(heading3); --flow-space: var(--space-md); }
-  h5 { @include font-style(heading4); --flow-space: var(--space-md); }
-  h6 { @include font-style(heading4); --flow-space: var(--space-md); }
-  p  {                                --flow-space: var(--space-sm); }
-  ul, ol {                            --flow-space: var(--space-md); }
+  h2 { @include font-style(heading2); --flow-space: var(--_space-xl); }
+  h3 { @include font-style(heading3); --flow-space: var(--_space-lg); }
+  h4 { @include font-style(heading3); --flow-space: var(--_space-md); }
+  h5 { @include font-style(heading4); --flow-space: var(--_space-md); }
+  h6 { @include font-style(heading4); --flow-space: var(--_space-md); }
+  p  {                                --flow-space: var(--_space-sm); }
+  ul, ol {                            --flow-space: var(--_space-md); }
 
   /* tighten heading stacks (bigger → smaller) */
-  :is(h2) + :is(h3,h4,h5,h6) { margin-block-start: var(--space-lg); }
-  :is(h3) + :is(h4,h5,h6)    { margin-block-start: var(--space-md); }
-  :is(h4) + :is(h5,h6)       { margin-block-start: var(--space-sm); }
-  h5 + h6                     { margin-block-start: var(--space-sm); }
+  :is(h2) + :is(h3,h4,h5,h6) { margin-block-start: var(--_space-lg); }
+  :is(h3) + :is(h4,h5,h6)    { margin-block-start: var(--_space-md); }
+  :is(h4) + :is(h5,h6)       { margin-block-start: var(--_space-sm); }
+  h5 + h6                     { margin-block-start: var(--_space-sm); }
 
   /* paragraph clusters */
   p + p { margin-block-start: var(--space-sm); }
@@ -61,6 +61,6 @@ Wrap any content in this class to apply the styles.
 
   /* If users put more than one block into a layout column */
   .block + .block {
-    margin-top: var(--margin-md);
+    margin-top: var(--_space-md);
   }
 }
