@@ -2,7 +2,7 @@
 // 1) if they passed something, it must be an object
 if (isset($layouts) && !is_object($layouts)) {
   throw new \InvalidArgumentException(
-    'Snippet error: $layouts was passed but is not an object ('.gettype($layouts).')'
+    'Snippet error: $layouts was passed but is not an object (' . gettype($layouts) . ')'
   );
 }
 
@@ -22,27 +22,25 @@ if (!is_object($layouts)) {
 
 <div class="layout container">
 
-    <?php foreach ($layouts->toLayouts() as $layout) : ?>
+  <?php foreach ($layouts->toLayouts() as $layout) : ?>
 
-        <section class="layout__row | kb-grid">
-            <?php foreach ($layout->columns() as $column) : ?>
+    <div class="layout__row | kb-grid">
+      <?php foreach ($layout->columns() as $column) : ?>
 
-                <?php if ($column->blocks()->isEmpty()): ?>
-                    <div class="block block--spacer <?= convertFractionToClassName($column->width()) ?>"></div>
-                <?php else: ?>
+        <div class="layout__column <?= kbResponsiveClassesFromFraction($column->width()) ?>">
 
-                    <?php foreach ($column->blocks() as $block): ?>
-                        <div class="block block-type-<?= $block->type() ?> <?= convertFractionToClassName($column->width()) ?>">
-                            <?= $block ?>
-                        </div>
-                    <?php endforeach ?>
+          <?php foreach ($column->blocks() as $block): ?>
+            <div class="block block-type-<?= $block->type() ?>">
+              <?= $block ?>
+            </div>
+          <?php endforeach ?>
 
-                <?php endif; ?>
-                
-            <?php endforeach ?>
-        </section>
+        </div>
+
+      <?php endforeach ?>
+    </div>
 
 
-    <?php endforeach ?>
+  <?php endforeach ?>
 
 </div>
