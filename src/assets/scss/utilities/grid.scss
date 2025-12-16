@@ -1,3 +1,17 @@
+/* 
+How to use:
+
+* Default: full width, md: half, lg: third
+* <div class="col-1-1 col-1-2-md col-1-3-lg">
+
+* Always third
+* <div class="col-1-3">
+
+* Half on small, quarter on medium, sixth on large
+* <div class="col-1-2-sm col-1-4-md col-1-6-lg">
+*/
+
+
 @use '../abstracts/breakpoints' as *;
 
 
@@ -20,125 +34,41 @@
     grid-column: span calc(var(--_columns) * var(--_width)); // Ex.: 24 * 1/8 = 3
 }
 
-/* Tiny - never breaks */
-.column-1-xs   { --_width: 1/1; }
-.column-3-4-xs { --_width: 3/4; }
-.column-2-3-xs { --_width: 2/3; }
-.column-1-2-xs { --_width: 1/2; }
-.column-1-3-xs { --_width: 1/3; }
-.column-1-4-xs { --_width: 1/4; }
-.column-1-6-xs { --_width: 1/6; }
-.column-1-8-xs { --_width: 1/8; }
-.column-1-12-xs { --_width: 1/12; }
+/* Fractions */
+$fractions: (
+  1-1:  1/1,
+  3-4:  3/4,
+  2-3:  2/3,
+  1-2:  1/2,
+  1-3:  1/3,
+  1-4:  1/4,
+  1-6:  1/6,
+  1-8:  1/8,
+  1-12: 1/12
+);
 
-/* Small */
-.column-1-6-sm,
-.column-1-8-sm { --_width: 1/2; }
+/* Breakpoints (Must match breakpoint() from abstracts/breakpoints.scss) */
+$breakpoints: ( 
+  xs: xs,
+  sm: sm,
+  md: md,
+  lg: lg
+);
 
-.column-1-12-sm { --_width: 1/4; }
-
-@include breakpoint('xs') {
-
-  /* Small */
-  .column-1-3-sm, 
-  .column-1-4-sm { --_width: 1/2; }
-  
-  .column-1-6-sm,
-  .column-1-8-sm { --_width: 1/4; }
-  
-  .column-1-12-sm { --_width: 1/8; }
-
-  /* Medium */
-  .column-1-3, .column-1-3-md, 
-  .column-1-4, .column-1-4-md { --_width: 1/1; }
-
-  .column-1-6, .column-1-6-md,
-  .column-1-8, .column-1-8-md { --_width: 1/2; }
-  
-  .column-1-12, .column-1-12-md { --_width: 1/4; }
-
-  /* Large */
-  .column-1-3-lg, 
-  .column-1-4-lg,
-  .column-1-6-lg,
-  .column-1-8-lg,
-  .column-1-12-lg { --_width: 1/1; }
-
+/* Base (mobile / default) classes */
+@each $name, $value in $fractions {
+  .col-#{$name} {
+    --_width: #{$value};
+  }
 }
 
-
-@include breakpoint('sm') {
-
-    /* Small */
-    .column-1-sm   { --_width: 1/1; }
-    .column-3-4-sm { --_width: 3/4; }
-    .column-2-3-sm { --_width: 2/3; }
-    .column-1-2-sm { --_width: 1/2; }
-    .column-1-3-sm { --_width: 1/3; }
-    .column-1-4-sm { --_width: 1/4; }
-    .column-1-6-sm { --_width: 1/6; }
-    .column-1-8-sm { --_width: 1/8; }
-    .column-1-8-sm { --_width: 1/12; }
-    
-    /* Medium */
-    .column-1-3, .column-1-3-md, 
-    .column-1-4, .column-1-4-md { --_width: 1/2; }
-
-    .column-1-6, .column-1-6-md,
-    .column-1-8, .column-1-8-md { --_width: 1/4; }
-    
-    .column-1-12, .column-1-12-md { --_width: 1/8; }
-
-
-    /* Large */
-    .column-1-3-lg, 
-    .column-1-4-lg { --_width: 1/1; }
-
-    .column-1-6-lg,
-    .column-1-8-lg { --_width: 1/2; }
-    
-    .column-1-12-lg { --_width: 1/4; }
-
-
-}
-
-
-@include breakpoint('md') {
-
-    /* Medium */
-    .column-1, .column-1-md   {   --_width: 1/1; }
-    .column-3-4, .column-3-4-md { --_width: 3/4; }
-    .column-2-3, .column-2-3-md { --_width: 2/3; }
-    .column-1-2, .column-1-2-md { --_width: 1/2; }
-    .column-1-3, .column-1-3-md { --_width: 1/3; }
-    .column-1-4, .column-1-4-md { --_width: 1/4; }
-    .column-1-6, .column-1-6-md { --_width: 1/6; }
-    .column-1-8, .column-1-8-md { --_width: 1/8; }
-    .column-1-12, .column-1-12-md { --_width: 1/12; }
-
-    /* Large */
-    .column-1-3-lg, 
-    .column-1-4-lg { --_width: 1/2; }
-
-    .column-1-6-lg,
-    .column-1-8-lg { --_width: 1/4; }
-    
-    .column-1-12-lg { --_width: 1/8; }
-
-}
-
-
-@include breakpoint('lg') {
-    
-    /* Large */
-    .column-1-lg   { --_width: 1/1; }
-    .column-3-4-lg { --_width: 3/4; }
-    .column-2-3-lg { --_width: 2/3; }
-    .column-1-2-lg { --_width: 1/2; }
-    .column-1-3-lg { --_width: 1/3; }
-    .column-1-4-lg { --_width: 1/4; }
-    .column-1-6-lg { --_width: 1/6; }
-    .column-1-8-lg { --_width: 1/8; }
-    .column-1-12-lg { --_width: 1/12; }
-
+// Responsive variants like .col-1-2-sm, .col-1-2-md, ...
+@each $bp-key, $bp-name in $breakpoints {
+  @include breakpoint($bp-name) {
+    @each $name, $value in $fractions {
+      .col-#{$name}-#{$bp-key} {
+        --_width: #{$value};
+      }
+    }
+  }
 }
