@@ -1,7 +1,5 @@
 # Kirby and Vite Template
 
-## Features
-
 #### The following features are shamelessly stolen from [Arnoson's kirby-vite kit](https://github.com/arnoson/kirby-vite-multi-page-kit) 
 
 - ⚡️ Uses [Vite](https://vitejs.dev/) with [kirby-vite](https://github.com/arnoson/kirby-vite) plugin
@@ -9,38 +7,13 @@
 - 🔄 Live Reloading for Kirby templates, snippets, content, ... changes
 - 📂 [Public folder structure](https://getkirby.com/docs/guide/configuration#custom-folder-setup__public-folder-setup)
 
+## Additional Features
 
-#### The following features are added to provide a structured setup and some predefined elements
-
-- 🧩 Predefined components
-- 🎨 Predefined SCSS structure:
-  - abstracts
-  - typographic styling
-  - variable setup
-  - utility classes
-  - custom built grid system`src/assets/scss/grid.scss`
-  - scaleable structure
-- ✂️ Predefined `site/snippets` structure:
-  - `./page-structure.php`
-  - `./components/`
-  - `./parts/`
-  - `./blocks/`
-- 🗺️ Predefined `site/blueprints` structure:
-  - `./files/`
-  - `./fields/`
-  - `./sections/`
-  - `./users/`
-  - `./blocks/`
-- 🌐 Extends Kirby's layout field
-  - `~/components/layout.php`
-  - `~/blueprints/fields/layout.yml`
-  - uses writer field styles for text content `~/components/writer-field.scss`
-  - Uses the grid system `~/utility/grid.scss` to structure the layout entries
-- 🔌 Helper Functions Plugin
-  - `~/site/plugins/kb-helpers`
-  - Add functions to the plugin to the `lib` folder (They are publicly accessible)
-  - The layout component uses the `convertFractionToClass` function
-
+- 🧱 Opinionated page shell via `site/snippets/page-structure.php` with slot-based sections
+- 🧩 Layout field extension that maps Kirby fractions to a custom CSS grid
+- 🗂️ Curated blueprints, fields, file types and user roles for common site needs
+- 🎨 SCSS architecture (abstracts, utilities, components) plus writer-friendly typography
+- 🔌 Helper plugin and panel skin to keep panel output and frontend grid in sync
 
 ## Installation
 
@@ -80,70 +53,51 @@ Build your optimized frontend assets to `public/dist`:
 npm run build
 ```
 
-## Use the preset structure
+## Frontend build & asset loading
 
-The heart of this template is the `site/snippets/page-structure.php`.
-It must be used in every `site/templates` and provides the whole page structure and exposes different `slots()` to add content to the `<main>`, `<head>`, `<header>`, `<footer>` and `<foot>` of the page.
+- Vite is preconfigured in `vite.config.js` with `vite-plugin-kirby` to serve/build everything inside `src`, including per-template bundles from `src/templates/*.js`.
+- The Kirby Vite plugin lives in `site/plugins/kirby-vite`; `site/config/vite.config.php` is auto-generated so Kirby knows where to find `public/dist`.
+- `site/snippets/page-structure.php` injects shared assets via `vite()->js('main.js')` / `vite()->css('main.js')` and tries to load template-specific assets (e.g. `templates/home.js`) automatically.
 
-In `site/templates/default.php` you can find a all use of the `slots()` method for this snippet.  
-  
-  
-#### Use The Following Slots:
+## Page shell & navigation
 
-`slot('default')`   → inside `<main>`
-  
-`slot('head')`      → inside `<head>` (add page specific `<link>`, `<script>`, `<meta>` etc.)
-  
-`slot('header')`    → inside `<header>`  
-  
-`slot('footer')`    → inside `<footer>`  
-  
-`slot('foot')`      → right before the `<body>` tag closes (add page specific `<link>`, `<script>`, `<meta>` etc.)   
+- Every template calls `snippet('page-structure', slots: true)` and fills named `slot()`s for `head`, `header`, `default`, `footer`, and `foot`, keeping markup consistent across pages (`site/templates/*.php`).
+- The header pulls a minimal navigation component (`site/snippets/components/menu.php`) that lists all non-error pages and marks the active one.
+- Favicons are generated server-side from the `siteIcon` field through `site/snippets/parts/favicons.php`, which derives `.ico`, `.svg`, and Apple touch icons on the fly.
 
-#### Arrows
-```
-<span class="arrow" data-direction="left"></span>
-```
-The following keywords for `data-direction` work:
-- `left`
-- `right`
-- `up`
-- `down`
-- `up-left`
-- `down-left`
-- `up-right`
-- `down-right`
+## Layout field & grid system
 
+- The layout field blueprint (`site/blueprints/fields/layout.yml`) defines a set of column combinations that mirror the custom grid fractions.
+- `site/snippets/components/layout.php` renders layout columns into a `.kb-grid` container and translates Kirby’s `1/2`-style widths into responsive classes through `kbResponsiveClassesFromFraction()` from the helper plugin.
+- The grid itself is defined in `src/assets/scss/utilities/grid.scss`: 24-column base with fraction utilities (`col-1-2`, `col-1-3-lg`, etc.) generated for all breakpoints from `abstracts/breakpoints.scss`.
+- Legacy grid helpers remain in `src/assets/scss/utilities/old-grid.scss` if you need the previous `column-*` API.
 
-## Deployment
+## Blocks & content components
 
-### Manually
+- Text blocks reuse the custom writer field (`site/blueprints/fields/writer.yml`) with a slim toolbar; frontend typography for writer output is styled via `.writer-fields` in `src/assets/scss/components/writer-field.scss`.
+- Image blocks (`site/blueprints/blocks/image.yml` + `site/snippets/blocks/image.php`) support internal/external sources, optional ratios/cropping, links, captions, and set `aspect-ratio` on the rendered `<figure>`.
+- A Glide-ready gallery renderer lives in `site/snippets/blocks/gallery.php` with matching styles in `src/assets/scss/components/gallery.scss`; it applies a configurable ratio and includes arrow/bullet controls that hook into Glide’s classes.
+- Utility arrows (`src/assets/scss/components/arrows.scss`) power the arrow spans referenced in templates and the gallery navigation.
 
-Upload the repository to your web server and point your web server to the repository's `public` folder.
+## Blueprint structure & panel tweaks
 
-### Rsync
+- Blueprints are organized by type (`site/blueprints/{pages,files,fields,sections,tabs,users}`) to encourage reuse: e.g. `fields/alignment.yml`, `fields/mobile-display.yml`, and `fields/site-icon.yml`.
+- Default pages (`site/blueprints/pages/default.yml`) expose a writer field; legal/error pages have tailored presets; the site blueprint separates main pages from “background” pages via tabs and uses the shared `settings`/`media` tab partials.
+- File blueprints for images/PDFs enforce alt/caption metadata. User roles (`site/blueprints/users/*.yml`) set granular panel permissions and share the `sections/user-info.yml` fields.
+- Panel appearance is customized through `public/assets/css/custom-panel.css`, registered in `site/config/config.php`.
+- Environment-specific config is split (`site/config/config.php` vs `site/config/config.localhost.php`) so debug mode stays local.
 
-If you have ssh access you can use rsync to automate the upload/sync.
+## Styling system
 
-### Git
+- SCSS is structured under `src/assets/scss/`:
+  - `abstracts/` for breakpoints, mixins, and type scales.
+  - `utilities/` for CSS variables, spacing helpers, grid utilities, and generic utility classes.
+  - `components/` for arrows, buttons, images, writer content, and gallery styling.
+  - `layout/` for global defaults plus header/footer shells; `base/` for resets, typography, and link styles.
+- Shared styles compile from `src/assets/scss/main.scss`; template-specific overrides live next to each entry (e.g. `src/templates/home.js` loads `src/assets/scss/home.scss`).
 
-You can also deploy your repository with git. Then you have to run the [installation](#installation) steps again on your web server.
+## Helper plugin
 
-## File Nesting
+- `site/plugins/kb-helpers` registers shared PHP utilities; currently it exposes `kbResponsiveClassesFromFraction()` (`lib/kbResponsiveClassesFromFraction.php`) to keep Kirby layout widths aligned with the SCSS grid.
+- Add more shared helpers to the `lib/` folder and import them where needed; they are available globally once the plugin loads.
 
-If your are using VS Code, you can add file nesting to visually organize your assets in the editor's file explorer:
-
-```json
-// .vscode/settings.json
-{
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "*.js": "${capture}.css"
-  },
-}
-```
-
-## Versioning
-
-Because this is a started kit and not a library it doesn't use semantic versioning.
-If you wan't to migrate an existing project please look for any breaking changes in the release note.
