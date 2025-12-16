@@ -18,7 +18,7 @@ composer.lock
 /public/dist/
 
 # Content should only be handled by the live Site's panel
-/content/
+
 
 # Kirby
 .dev
