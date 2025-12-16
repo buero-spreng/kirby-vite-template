@@ -36,24 +36,19 @@ How to use:
 
 /* Fractions */
 $fractions: (
-  1-1:  1/1,
-  3-4:  3/4,
-  2-3:  2/3,
-  1-2:  1/2,
-  1-3:  1/3,
-  1-4:  1/4,
-  1-6:  1/6,
-  1-8:  1/8,
-  1-12: 1/12
+  "1-1":  1/1,
+  "3-4":  3/4,
+  "2-3":  2/3,
+  "1-2":  1/2,
+  "1-3":  1/3,
+  "1-4":  1/4,
+  "1-6":  1/6,
+  "1-8":  1/8,
+  "1-12": 1/12
 );
 
-/* Breakpoints (Must match breakpoint() from abstracts/breakpoints.scss) */
-$breakpoints: ( 
-  xs: xs,
-  sm: sm,
-  md: md,
-  lg: lg
-);
+/* Breakpoints => Must match $breakpoints keys from abstracts/breakpoints.scss */
+$bp-keys: ( xs,sm,md,lg,xl );
 
 /* Base (mobile / default) classes */
 @each $name, $value in $fractions {
@@ -63,10 +58,10 @@ $breakpoints: (
 }
 
 // Responsive variants like .col-1-2-sm, .col-1-2-md, ...
-@each $bp-key, $bp-name in $breakpoints {
-  @include breakpoint($bp-name) {
+@each $bp in $bp-keys {
+  @include breakpoint($bp) {
     @each $name, $value in $fractions {
-      .col-#{$name}-#{$bp-key} {
+      .col-#{$name}-#{$bp} {
         --_width: #{$value};
       }
     }

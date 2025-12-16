@@ -2,7 +2,7 @@
 
 
 /* Grid Container */
-.kb-grid {
+.layout-grid {
     --_columns: 24;
     --_grid-inline-gap: var(--spacing-grid);
     --_grid-block-gap: var(--spacing-grid);
@@ -16,7 +16,7 @@
 }
 
 /* All children have full width by default */
-.kb-grid > * {
+.layout-grid > * {
     grid-column: span calc(var(--_columns) * var(--_width)); // Ex.: 24 * 1/8 = 3
 }
 
