@@ -1,0 +1,10 @@
+label:
+  en: Settings
+  de: Einstellungen
+icon: settings
+
+columns:
+  - width: 1/2
+
+    fields:
+      siteIcon: fields/site-icon

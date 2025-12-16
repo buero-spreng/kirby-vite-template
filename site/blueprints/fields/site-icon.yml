@@ -1,0 +1,18 @@
+# Used by the `parts/favicons.php` snippet
+
+label:
+  en: Site icon
+  de: Seiten-Icon
+type: files
+accept: image/svg
+multiple: false
+required: true
+layout: cardlets
+image:
+  back: transparent
+width: 1/2
+help: 
+  en: |
+    This icon is used as browser tab favicon and as the app's icon on the home screen etc.
+  de: |
+    Dieses Icon wird als Browser-Tab favicon und als App-Icon auf dem Home-Screen etc. verwendet.

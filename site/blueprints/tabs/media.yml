@@ -1,0 +1,15 @@
+label:
+  en: Media
+  de: Medien
+icon: images
+
+columns:
+  - width: 1/2
+    sections:
+
+      images:
+        label: 
+          en: Images
+          de: Bilder
+        type: files
+        template: image

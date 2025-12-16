@@ -11,7 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title><?= $site->title() ?></title>
+
+    <?php snippet('parts/favicons') ?>
 
     <?= vite()->js('main.js', ['defer' => true]) ?>
     <?= vite()->css('main.js') ?>

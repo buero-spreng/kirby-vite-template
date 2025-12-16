@@ -2,7 +2,10 @@ title: Site Title
 
 tabs:
   main: 
-    label: Pages
+    label: 
+      en: Pages
+      de: Seiten
+    icon: display
 
     columns: 
       - width: 1/2
@@ -28,3 +31,7 @@ tabs:
               back: transparent
               color: font
 
+  settings: tabs/settings
+  
+  media: tabs/media
+    
