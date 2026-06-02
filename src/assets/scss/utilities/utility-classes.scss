@@ -5,8 +5,6 @@
 .bg-c-bg { background-color: var(--bg-color); }
 .bg-c-text { background-color: var(--text-color); }
 .bg-c-link { background-color: var(--link-color); }
-.bg-c-icon { background-color: var(--icon-color); }
-.bg-c-button { background-color: var(--button-color); }
 
 .c-black { color: var(--color-black); }
 .c-white { color: var(--color-white); }
@@ -14,8 +12,6 @@
 .c-text { color: var(--text-color); }
 .c-bg { color: var(--bg-color); }
 .c-link { color: var(--link-color); }
-.c-icon { color: var(--icon-color); }
-.c-button { color: var(--button-color); }
 
 
 
@@ -56,10 +52,16 @@ $directions: (
 
 
 
-/* Flexbox & Grid */
+/* Display */
+.block { display: block; }
+.inline-block { display: inline-block; }
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
+.hidden { display: none; }
 
+
+
+/* Flexbox */
 .flex-row { flex-direction: row; }
 .flex-row-reverse { flex-direction: row-reverse; }
 
@@ -90,28 +92,17 @@ $directions: (
 .no-rowgap { row-gap: 0; }
 .no-columngap { column-gap: 0; }
 .gap { gap: var(--spacing-grid); }
-.gap-3xs { gap: var(--spacing-3xs); }
-.gap-2xs { gap: var(--spacing-2xs); }
-.gap-xs { gap: var(--spacing-xs); }
-.gap-sm { gap: var(--spacing-sm); }
-.gap-md { gap: var(--spacing-md); }
-.gap-lg { gap: var(--spacing-lg); }
-.gap-xl { gap: var(--spacing-xl); }
-.gap-2xl { gap: var(--spacing-2xl); }
-.gap-3xl { gap: var(--spacing-3xl); }
 
-
-
-/* Borders */
-.border { border: var(--border-width) solid var(--border-color); }
-.border-top { border-top: var(--border-width) solid var(--border-color); }
-.border-right { border-right: var(--border-width) solid var(--border-color); }
-.border-bottom { border-bottom: var(--border-width) solid var(--border-color); }
-.border-left { border-left: var(--border-width) solid var(--border-color); }
+@each $size in $spaces {
+  .gap-#{$size}     { gap: var(--spacing-#{$size}); }
+  .col-gap-#{$size} { column-gap: var(--spacing-#{$size}); }
+  .row-gap-#{$size} { row-gap: var(--spacing-#{$size}); }
+}
 
 
 
 /* Positioning */
-.position-r { position: relative; }
-.position-a { position: absolute; }
-.position-f { position: fixed; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
