@@ -6,6 +6,8 @@ headings:
   - 2
   - 3
   - 4
+  - 5
+  - 6
 nodes:
   - heading
   - paragraph
@@ -22,7 +24,7 @@ marks:
   - email
   # - sub
   # - sup
-  # - clear
+  - clear
 toolbar:
   inline: false
   marks:
@@ -31,3 +33,6 @@ toolbar:
     - "|"
     - link
     - email
+    - "|"
+    - clear
+
