@@ -1,1 +1,9 @@
 Title: Kirby Template
+
+----
+
+Siteicon: - file://cNZVNCo3jhygaImA
+
+----
+
+Images: - file://pFanzZsk1BOnEF1Q

@@ -8,3 +8,9 @@ columns:
 
     fields:
       siteIcon: fields/site-icon
+
+      images:
+        label: 
+          en: Images
+          de: Bilder
+        type: files

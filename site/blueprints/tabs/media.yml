@@ -12,4 +12,42 @@ columns:
           en: Images
           de: Bilder
         type: files
+        layout: cardlets
+        batch: true
         template: image
+  
+  - width: 1/2
+    sections:
+
+      pdfs:
+        label: 
+          en: PDFs
+          de: PDFs
+        type: files
+        layout: cardlets
+        batch: true
+        template: pdf
+  
+  - width: 1/2
+    sections:
+
+      svgs:
+        label: 
+          en: SVGs
+          de: SVGs
+        type: files
+        layout: cardlets
+        batch: true
+        template: svg
+  
+  - width: 1/2
+    sections:
+
+      other:
+        label: 
+          en: Other
+          de: Andere
+        type: files
+        layout: cardlets
+        batch: true
+        template: default

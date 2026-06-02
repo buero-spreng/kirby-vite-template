@@ -1,0 +1,5 @@
+title: SVG
+
+accept:
+  extension: svg
+  mime: image/svg+xml
